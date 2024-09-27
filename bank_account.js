@@ -1,3 +1,4 @@
+const User = require("./user.js");
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -12,13 +13,12 @@ class NotAcceptableValue extends Error {
   }
 }
 
-class BankAccount {
+class BankAccount extends User {
 
   #saldo = 0;
 
   constructor(name, university) {
-    this.name = name;
-    this.university = university;
+    super(name, university);
   }
 
   // deposit => pembayaran di awal
@@ -76,6 +76,10 @@ class BankAccount {
 
   getSaldo() {
     return this.#saldo;
+  }
+
+  greet() {
+    console.log(`Halo ${this.name} dari ${this.university}, Selamat datang!!`);
   }
 
   closeQuestion(){
