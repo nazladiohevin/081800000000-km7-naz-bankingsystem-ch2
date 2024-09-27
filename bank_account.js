@@ -16,6 +16,11 @@ class BankAccount {
 
   #saldo = 0;
 
+  constructor(name, university) {
+    this.name = name;
+    this.university = university;
+  }
+
   // deposit => pembayaran di awal
   async deposit(amount){    
     if (amount < 0 || amount === 0 || isNaN(amount)) {
