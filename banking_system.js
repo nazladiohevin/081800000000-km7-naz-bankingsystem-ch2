@@ -1,9 +1,9 @@
 const { BankAccount, NotAcceptableValue } = require("./bank_account.js");
 
 async function main() {
-  const atm = new BankAccount();
+  const atm = new BankAccount("Nazla Dio Hevin", "Univ Amikom Yogyakarta");
   
-  console.log("Halo Hevin, Selamat datang!!");
+  console.log(`Halo ${atm.name} dari ${atm.university}, Selamat datang!!`);
 
   let action = 0;
 
