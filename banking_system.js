@@ -12,7 +12,6 @@ class NotAcceptableValue extends Error {
   }
 }
 
-
 class BankAccount {
 
   #saldo = 0;
@@ -21,6 +20,10 @@ class BankAccount {
   async deposit(amount){    
     if (amount < 0 || amount === 0 || isNaN(amount)) {
       throw new NotAcceptableValue("Nilai tidak diterima!!");
+    }
+
+    if (this.#saldo !== 0) {
+      throw new Error("Deposit tak bisa dilakukan, karena kamu udah pernah melakukan deposit");
     }
 
     return new Promise(resolve => {
@@ -36,7 +39,7 @@ class BankAccount {
   async add(amount) {
     if (amount < 0 || amount === 0 || isNaN(amount)) {
       throw new NotAcceptableValue("Nilai tidak diterima!!");
-    }
+    }   
     
     return new Promise(resolve => {
       const callback = () => {
@@ -128,7 +131,7 @@ async function main() {
       if (error instanceof NotAcceptableValue) {
         console.log(error.message);
       } else {
-        console.log("Cek kembali")
+        console.log(error.message)
       }
     }
     
