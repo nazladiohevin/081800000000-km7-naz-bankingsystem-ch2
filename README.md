@@ -1,6 +1,6 @@
 
 <div>
-  <h1>Object Oriented Programming - BEJS</h1>
+  <h1>Banking System</h1>
 </div>
 <div">
   <h2>Nazla Dio Hevin</h2>
