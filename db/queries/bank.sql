@@ -69,6 +69,10 @@ UPDATE accounts SET balance = balance - 100000 WHERE account_id = 1;
 -- lihat seluruh transaksi
 SELECT * FROM transactions;
 
+-- Cari customer bank dan buat index nya
+CREATE INDEX idx_user_name ON customers (name);
+SELECT * FROM customers WHERE name LIKE '%Naz%';
+
 -- Hapus transaksi hari ini
 DELETE FROM transactions WHERE account_id = 1 AND created_at = CURRENT_DATE;
 
